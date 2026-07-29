@@ -11,15 +11,21 @@ int main()
 {
     // this is a print statement std is the standard library, :: mean use a function from the library and cout is console out
     // we will look into the << later as this is bitshifting
-    std::cout << "Hello World!\n"; 
+    std::cout << "Welcome to the Hot and Cold Treasure Hunt\n"; 
+    Player p; 
 
+    // gameplay loop
+    while (true)
+    {
+        
+    }
 
     /*
     Challenges 
     Easy
-    - Expand the code to move left right up and down
-    - Add in a function to the player so after they move it prints the new location to the console
+    - Expand the code to move up and down
     - Expand the code to restrict the players position within a grid of 10 * 10
+    - ensure you provide feedback on what the player has done and what you want them to do e.g. ask for input
     Medium 
     - Right click the solution make a new class called Item
     - Give a constructor to pass a position and a default that choses a randon (10*10) position
@@ -32,6 +38,7 @@ int main()
     - Instead of just warmer and colder, also add context, such as "warmer, still cool", to show the player is closer but still far away. 
     - See if you can make use of the Carriage return "\r", to actually keep the console window short and keep information like moves left and total score available.
     - Add a new refinement to the game of your own choosing
+    - See about making ether a standard movement class or IMoveable interface for the classes you have created for a more component based system.
     */
 }
 
