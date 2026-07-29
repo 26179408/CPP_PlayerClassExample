@@ -15,20 +15,23 @@ int main()
 
 
     /*
-    * next c++ focus session i will give you a visualisation of this.
     Challenges 
     Easy
-    - Expand the code to move left 
-    - Expand the code to move up and down
-    - Expand the code to restrict the players position within a grid of 50 * 50
+    - Expand the code to move left right up and down
+    - Add in a function to the player so after they move it prints the new location to the console
+    - Expand the code to restrict the players position within a grid of 10 * 10
     Medium 
-    - right click the solution make a new class called monster
-    - give it the ability to move and print it's position
-    - expand the monster so it can store an object of player, extend the player so the monster can get and move in the direction of the player
+    - Right click the solution make a new class called Item
+    - Give a constructor to pass a position and a default that choses a randon (10*10) position
+    - Expand so if the player gets closer to the item the system will print warmer, or if further away colder
     Hard 
-    - expand the game so if the monster moves onto the players slot the game ends
-    - In C++, we typically use a vector to store a list (https://en.cppreference.com/cpp/container/vector), make a list of 2D points inwhich the player cannot move to, and will lose a turn but the monster will break them if it touches them
-    - Add a unique spot inwhich if the player walks over they will get points, and one that will say "trap set" which if the monster stands on will be killed winning the game
+    - Make is so if the player hits the item, it prints you found the item! +100 and moves the item to a new location, and stores the score
+    - Restrict the player to a number of moves they can make before the game ends, they will get some bonus moves for collecting an item
+    - Add another class called Wall, at the start a number of walls will be added, then each time an item is called more will spawn. If the player tries to move where a wall is they will lose the move and the message "A wall blocks your path, Should have gone to specsavers"
+    Refinements - Part of the assignment and purpose if this module is to show you can refine the gameplay to a high standard
+    - Instead of just warmer and colder, also add context, such as "warmer, still cool", to show the player is closer but still far away. 
+    - See if you can make use of the Carriage return "\r", to actually keep the console window short and keep information like moves left and total score available.
+    - Add a new refinement to the game of your own choosing
     */
 }
 
