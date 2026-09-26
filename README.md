@@ -4,7 +4,7 @@ An example C++ program for taking existing OO knowledge and transferring it into
 
 ## Overview
 
-In this we will work on a basic Hot and Cold style game mechanic, each "turn" the player will use WASD to move in a direction and the player will be told if they are hotter or colder. The goal is to understand the basics of a C++ project compared to a C# project.
+[A video overview is here](https://mmutube.mmu.ac.uk/media/Intro+to+the+Hot+and+Cold+Game/1_wcknm7p0). In this we will work on a basic Hot and Cold style game mechanic, each "turn" the player will use WASD to move in a direction and the player will be told if they are hotter or colder. The goal is to understand the basics of a C++ project compared to a C# project.
 
 Hot and Cold games are quite common for children and appear as way to find areas/ objects of interest, a nice version of this game is the [Chocobo Hot & Cold mini game in Final Fantasy IX](https://www.youtube.com/watch?v=3M0hIkWmbuA)
 
@@ -63,7 +63,7 @@ Compile and try out the input system.
 
 ### Moving left or right
 
-Now that we have input, You **can begin adding code** we can begin to affect the player's position, use this code to move the player:
+Now that we have input, You **can begin adding code, [watch me here](https://mmutube.mmu.ac.uk/media/HotCold+Task+Base/1_amwf6oiw)** we can begin to affect the player's position, use this code to move the player:
 
 ```cpp
 if (input[0] == 'a')
@@ -107,11 +107,11 @@ Test your might
 
 - Expand the code to move up and down
 
-  Hint: use the code in **CPP_PlayerClassExample.cpp**, where you do the **input[0] == 'd'**.
+  Hint: use the code in **CPP_PlayerClassExample.cpp**, where you do the **input[0] == 'd'**. [Watch me here](https://mmutube.mmu.ac.uk/media/Hot++Cold+Challenge+1/1_7wte0lxz)
 
 - Expand the code to restrict the player's position within a grid of 10 * 10
 
-  Hint: I would define a **bool CanMove(int xDir, int yDir);** in **Player.h** and implement it in **Player.cpp**, that way in the input checking you can do **&& CanMove()**. You could also either pass in the bounds or hard code them.
+  Hint: I would define a **bool CanMove(int xDir, int yDir);** in **Player.h** and implement it in **Player.cpp**, that way in the input checking you can do **&& CanMove()**. You could also either pass in the bounds or hard code them. [Watch me here](https://mmutube.mmu.ac.uk/media/Hot++Cold+Challenge+2/1_7mwxybtk)
 
 - Ensure you provide feedback on what the player has done and what you want them to do e.g. ask for input, and add error checking to inputs
 
