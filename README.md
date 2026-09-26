@@ -6,6 +6,8 @@ An example C++ program for taking existing OO knowledge and transferring it into
 
 In this we will work on a basic Hot and Cold style game mechanic, each "turn" the player will use WASD to move in a direction and the player will be told if they are hotter or colder. The goal is to understand the basics of a C++ project compared to a C# project.
 
+Hot and Cold games are quite common for children and appear as way to find areas/ objects of interest, a nice version of this game is the [Chocobo Hot & Cold mini game in Final Fantasy IX](https://www.youtube.com/watch?v=3M0hIkWmbuA)
+
 ## Task
 
 ### Namespaces
@@ -36,7 +38,7 @@ Now we are using that namespace we can save a bit of typing.
 
 ### Console input
 
-You can see I have already created a basic gameplay loop via a **while(true)**. We will be taking in input from the user in this loop. But first good practice is to prompt the user, using [cout](https://www.geeksforgeeks.org/cpp/cout-in-c/), in the loop add this line:
+You can see I have already created a basic gameplay loop via a **while(true)**. We will be taking in input from the user in this loop. But first good practice is to prompt the user, using [cout](https://www.geeksforgeeks.org/cpp/cout-in-c/), in the loop i have added this line:
 
 ```cpp
 cout << "Press a to move left or d to move right\n";
@@ -44,24 +46,24 @@ cout << "Press a to move left or d to move right\n";
 
 Now since we know that **cout** is **console out**, naturally [**cin**](https://www.geeksforgeeks.org/cpp/cin-in-c/) is **console in**. But this does pose an issue, we can get direct characters with [cin.get](https://www.geeksforgeeks.org/cpp/cin-get-in-c-with-examples/), but that is more prone to errors. For us we will use the basic cin string, but in **C++ we don't have a String by default**, but it is given through the **std namespace**. To do this we need a variable to store the input and then in the loop to update it:
 
-Before the loop:
+Before the loop, we have the storage:
 
 ```cpp
 string input;
 ```
 
-After the loop prompt:
+During the loop we prompt:
 
 ```cpp
 cin >> input;
 cout << "Input was " << input << "\n";
 ```
 
-Save and compile and try out the input system.
+Compile and try out the input system.
 
 ### Moving left or right
 
-Now that we have input, we can begin to affect the player's position, use this code to move the player:
+Now that we have input, You **can begin adding code** we can begin to affect the player's position, use this code to move the player:
 
 ```cpp
 if (input[0] == 'a')
@@ -164,3 +166,5 @@ Part of the assignment and purpose of this module is to show you can refine the 
 
 - See about making either a standard movement class or IMoveable interface for the classes you have created for a more component based system.
 - See if you can make a Gameplay Manager that handles score, number of moves left and gamestate
+# Reference
+Content is made by Connah Kendrick (Connah.Kendrick@mmu.ac.uk)
