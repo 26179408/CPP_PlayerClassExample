@@ -119,13 +119,19 @@ Test your might
 
 ### Medium
 
-- Right click the solution and make a new class called Item
+- Right click the project (**CPP_PlayerClassExample**, just under the solution) and choose **Add -> Class...** to make a new class called Item
 
   ![Create a class](Images/CreateAClass.png)
 
   ![Name the class Item](Images/Item.png)
 
-  To use it in the **CPP_PlayerClassExample.cpp** you need to include the Header file, and **try not to use the new** keyword until we have gone through pointers.
+  Give it an **x** and **y** like the Player. To use it in the **CPP_PlayerClassExample.cpp** you need to include the Header file, and **try not to use the new** keyword until we have gone through pointers, a normal variable is all we need:
+
+  ```cpp
+  Item item;
+  ```
+
+  Make the item **before** the **while** loop, if you make it inside the loop you get a brand new item every turn. While you are testing, print where the item is so you can check your code, just remember to remove it later.
 
 - Give Item a constructor to pass a position and a default that chooses a random (10*10) position.
 
@@ -136,17 +142,41 @@ Test your might
   Item(int StartX, int StartY);
   ```
 
+  In **Item.cpp** we implement it the same way as the Player's functions, with **Item::** in front, but still no return type:
+
+  ```cpp
+  Item::Item(int StartX, int StartY)
+  {
+      x = StartX;
+      y = StartY;
+  }
+  ```
+
   After implementing in **Item.cpp**, you can create with the second constructor just using:
 
   ```cpp
   Item i(1, 2);
   ```
 
-  For the random element of the task you can use the [Random](https://www.geeksforgeeks.org/cpp/how-to-generate-random-value-by-dice-roll-in-cpp/), note this seems complex but it's because it's using the time to set our random seed.
+  **Careful**, for the default (random) constructor use **no brackets**, `Item i;` and **not** `Item i();`. C++ reads `Item i();` as declaring a function called i, so you get a confusing error the first time you try to use `i.x`.
+
+  For the random element of the task you can use the [Random](https://www.geeksforgeeks.org/cpp/how-to-generate-random-value-by-dice-roll-in-cpp/), note this seems complex but it's because it's using the time to set our random seed. Two things to watch:
+
+  - The dice example adds 1 to get 1 to 6, our grid from the Easy task is 0 to 9, so you want `rand() % 10` with no + 1
+  - Only call `srand` **once**, at the start of **main**, not in the constructor, otherwise items made in the same second land on the same square
 
 - Expand so if the player gets closer to the item the system will print warmer, or if further away colder, rather than just by moving closer to the item.
 
-  For this I would recommend the C++ Math library [**#include &lt;math.h&gt;**](https://www.geeksforgeeks.org/cpp/c-mathematical-functions/), which will help you calculate the [Euclidean](https://en.wikipedia.org/wiki/Euclidean_distance) or as we are grid movement [Manhattan](https://www.geeksforgeeks.org/data-science/manhattan-distance/) distances. You can store the last distance to know if you are Hotter or Colder.
+  As we are grid movement I would recommend the [Manhattan](https://www.geeksforgeeks.org/data-science/manhattan-distance/) distance, the number of moves to the item, you only need **abs** from `#include <cstdlib>` and it stays as whole numbers. The [Euclidean](https://en.wikipedia.org/wiki/Euclidean_distance) distance also works, but you need **sqrt** from the C++ Math library [**#include &lt;cmath&gt;**](https://www.geeksforgeeks.org/cpp/c-mathematical-functions/) and should store it as a float.
+
+  You can store the last distance to know if you are Hotter or Colder, plan it out like this:
+
+  1. Before the loop, work out the starting distance and store it
+  2. After each move, work out the new distance
+  3. Compare the two, print warmer or colder
+  4. Save the new distance as the last distance, ready for the next turn
+
+  Remember to remove the old "getting warmer/colder" messages from the main task, they were never checking the item.
 
 ### Hard
 
