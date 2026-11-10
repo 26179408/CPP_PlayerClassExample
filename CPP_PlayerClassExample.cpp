@@ -20,7 +20,7 @@ int main()
     // gameplay loop
     while (true)
     {
-        cout << "Press a to move left or d to move right\n";
+        cout << "Press a to move left, d to move right, w to move up or s to move down\n";
         cin >> input;
         cout << "Input was " << input << "\n";
         if (input[0] == 'a') 
