@@ -33,6 +33,16 @@ int main()
             p.Move(1, 0);
             cout << "Player moved right, getting warmer\n";
         }
+        else if (input[0] == 'w')
+        {
+            p.Move(1, 0);
+            cout << "Player moved up, getting warmer\n";
+        }
+        else if (input[0] == 's')
+        {
+            p.Move(1, 0);
+            cout << "Player moved down, getting warmer\n";
+        }
     }
 
 }
