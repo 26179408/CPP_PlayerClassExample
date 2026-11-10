@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Player.h"
 
 // this is the cpp file, this is for the implementation of the classes functionality 
@@ -9,4 +10,10 @@ void Player::Move(int xDir, int yDir)
 {
 	x += xDir;
 	y += yDir;
+	PrintPos();
+}
+
+void Player::PrintPos()
+{
+	std::cout << "Player is at X: " << x << " Y: " << y << "\n";
 }
